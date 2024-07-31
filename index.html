@@ -7,11 +7,10 @@
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    <h1>SIMULADOR DE CUOTAS</h1>
-
     <div class="simulatorcontainer" >
         <div class="sliderContainer">
             <div class="slidecontainer">
+                <h3>¿Cuánto dinero necesitas?</h3>
                 <input
                   type="range"
                   min="40000"
@@ -21,6 +20,8 @@
                   id="myRange"
                 />
                 <p>Valor compra: <span id="demo"></span></p>
+
+                <h3>¿Cuándo puedes pagarlo? </h3>
                 <input
                   type="range"
                   min="1"
@@ -32,10 +33,14 @@
                 <p>meses: <span id="monthsLabel"></span></p>
               </div>
         </div>
-
-        <div>
-            <span>Valor de la compra</span>
-            <p>Valor total: <span id="total"></span></p>
+        <div class="reportContainer">
+            <div class="report">
+                <h3>Reporte de tu crédito</h3>
+                <p>Valor cuota: <span id="cuota"></span></p>
+                <p>Intereses: <span id="intereses"></span></p>
+                <p>IVA: <span id="iva"></span></p>
+                <p>Valor total: <span id="total"></span></p>
+            </div>
         </div>
 
     </div>
