@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Keypago</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <h1>SIMULADOR DE CUOTAS</h1>
+
+    <div class="simulatorcontainer" >
+        <div class="sliderContainer">
+            <div class="slidecontainer">
+                <input
+                  type="range"
+                  min="40000"
+                  max="700000"
+                  value="50"
+                  class="slider"
+                  id="myRange"
+                />
+                <p>Valor compra: <span id="demo"></span></p>
+                <input
+                  type="range"
+                  min="1"
+                  max="6"
+                  value="1"
+                  class="slider"
+                  id="rangeMonths"
+                />
+                <p>meses: <span id="monthsLabel"></span></p>
+              </div>
+        </div>
+
+        <div>
+            <span>Valor de la compra</span>
+            <p>Value: <span id="total"></span></p>
+        </div>
+
+    </div>
+
+ 
+
+    <script src="./script.js"></script>
+  </body>
+</html>
