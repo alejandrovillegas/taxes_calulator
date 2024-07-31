@@ -47,3 +47,10 @@ body {
     align-items: center;
     height: 100vh;
   }
+
+  .sliderContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+  }
