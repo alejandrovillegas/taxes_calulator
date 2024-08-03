@@ -8,6 +8,10 @@ const monthsLabel = document.getElementById("monthsLabel");
 const monthReport = document.getElementById("monthReport");
 const serviceReport = document.getElementById("serviceReport");
 
+//docs: https://docs.google.com/spreadsheets/d/17cvJi5X5llrzgnoR5NtKKWacb7Tj5DbQ/edit?gid=1531492329#gid=1531492329
+// https://www.keypago.com/solicitar-cupo-simulador/
+// https://www.rapicredit.com/credito-para-ropa/
+
 // Inicializar valores
 const initialValue = 40000; // Valor inicial del slider de cantidad
 const initialMonths = 1; // Valor inicial del slider de meses
