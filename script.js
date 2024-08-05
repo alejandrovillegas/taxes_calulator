@@ -45,7 +45,8 @@ function calcularPMT(tasaInteresAnual, numPagos, montoPrestamo) {
 function updateValues() {
   const service = initialValue * 0.1;
   const totalAmount = Math.round(
-    calcularPMT(InteresMensual, initialMonths, initialValue) + service / initialMonths
+    calcularPMT(InteresMensual, initialMonths, initialValue) +
+      service / initialMonths
   );
   amount.innerHTML = initialValue;
   amountReport.innerHTML = Number(initialValue).toLocaleString();
@@ -57,6 +58,13 @@ function updateValues() {
 sliderValues.addEventListener("input", function () {
   initialValue = this.value;
   updateValues();
+  if (this.value < 40000) {
+    sliderMonths.max = 3;
+  } else if (this.value > 250001) {
+    sliderMonths.max = 6;
+  } else {
+    sliderMonths.max = 4;
+  }
 });
 
 // Event listener para el slider de meses
