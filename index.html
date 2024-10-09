@@ -7,45 +7,44 @@
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    <div class="simulatorcontainer" >
-        <div class="sliderContainer">
-            <div class="slidecontainer">
-                <h3>¿Cuánto dinero necesitas?</h3>
-                <input
-                  type="range"
-                  min="40000"
-                  max="700000"
-                  value="50"
-                  class="slider"
-                  id="myRange"
-                />
-                <p>Valor compra: <span id="amount"></span></p>
+    <div class="simulatorcontainer">
+      <div class="sliderContainer">
+          <div class="slidecontainer">
+              <h3>¿Cuánto dinero necesitas?</h3>
+              <input
+                type="text"
+                min="40000"
+                max="700000"
+                value="50"
+                class="slider"
+                id="myRange"
+                oninput="updateMonthsOptions()"
+              />
+              <p>Valor compra: <span id="amount"></span></p>
 
-                <h3>¿Cuándo puedes pagarlo? </h3>
-                <input
-                  type="range"
-                  min="1"
-                  max="3"
-                  value="1"
-                  class="slider"
-                  id="rangeMonths"
-                />
-                <p>meses: <span id="monthsLabel"></span></p>
-              </div>
-        </div>
-        <div class="reportContainer">
-            <div class="report">
-                <h3>Reporte de tu crédito</h3>
-                <p>Valor compra: $<span id="amountReport"></span></p>
-                <p>Intereses (26.82% EA): <span id="cuota"></span></p>
-                <p>meses: <span id="monthReport"></span></p>
-                <p>Valor de servicio: <span id="serviceReport"></span></p>
-                <p>Valor cuota: <span id="total"></span></p>
-            </div>
-        </div>
-
-    </div>
-
+              <h3>¿Cuándo puedes pagarlo?</h3>
+              <select id="rangeMonths" class="slider">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+              </select>
+              <p>Meses: <span id="monthsLabel"></span></p>
+          </div>
+      </div>
+      <div class="reportContainer">
+          <div class="report">
+              <h3>Reporte de tu crédito</h3>
+              <p>Valor compra: $<span id="amountReport"></span></p>
+              <p>Intereses (26.82% EA): <span id="cuota"></span></p>
+              <p>Meses: <span id="monthReport"></span></p>
+              <p>Valor de servicio: <span id="serviceReport"></span></p>
+              <p>Valor cuota: <span id="total"></span></p>
+          </div>
+      </div>
+  </div>
  
 
     <script src="./script.js"></script>
