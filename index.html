@@ -43,10 +43,26 @@
               <p>Valor cuota: <span id="total"></span></p>
               <p>Tasa de Interesés M.V.: <span id="interestMV">%</span></p>
           </div>
+          <button id="openModalBtn">Ver plan de pagos</button>
       </div>
   </div>
  
-
+    <!-- El Modal -->
+    <div id="myModal" class="modal">
+      <!-- Contenido del Modal -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="reportModal">
+          <h3>Reporte de tu crédito</h3>
+          <p>Valor de la compra: $<span id="ModalAmountReport"></span></p>
+          <p>Que plazo prefieres: <span id="ModalMonthReport"></span></p>
+          <!-- <p>Valor de servicio: <span id="serviceReport"></span></p> -->
+          <!-- <p>Intereses (26.82% EA): <span id="cuota"></span></p> -->
+          <p>Total Intereses: <span id="total"></span></p>
+          <p>Total Fianza: <span id="interestMV"></span></p>
+      </div>
+    </div>
+    </div>
     <script src="./script.js"></script>
   </body>
 </html>

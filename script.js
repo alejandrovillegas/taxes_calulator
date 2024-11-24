@@ -3,11 +3,21 @@ const sliderValues = document.getElementById("myRange");
 const sliderMonths = document.getElementById("rangeMonths");
 const amount = document.getElementById("amount");
 const amountReport = document.getElementById("amountReport");
+const ModalAmountReport = document.getElementById("ModalAmountReport");
+const ModalMonthReport = document.getElementById("ModalMonthReport");
 const total = document.getElementById("total");
 const monthsLabel = document.getElementById("monthsLabel");
 const monthReport = document.getElementById("monthReport");
 const serviceReport = document.getElementById("serviceReport");
 const interestMVLabel = document.getElementById("interestMV");
+
+// Obtener el modal
+const modal = document.getElementById("myModal");
+// Obtener el botón que abre el modal
+const btn = document.getElementById("openModalBtn");
+// Obtener el elemento <span> que cierra el modal
+const span = document.getElementsByClassName("close")[0];
+
 
 //docs: https://docs.google.com/spreadsheets/d/17cvJi5X5llrzgnoR5NtKKWacb7Tj5DbQ/edit?gid=1531492329#gid=1531492329
 // https://www.keypago.com/solicitar-cupo-simulador/
@@ -52,7 +62,9 @@ function updateValues() {
   );
   amount.innerHTML = initialValue;
   amountReport.innerHTML = Number(initialValue).toLocaleString('es-co');
+  ModalAmountReport.innerHTML = Number(initialValue).toLocaleString('es-co');
   monthReport.innerHTML = initialMonths;
+  ModalMonthReport.innerHTML = initialMonths;
   monthsLabel.innerHTML = initialMonths;
   interestMVLabel.innerHTML = interestMV + "%";
   total.innerHTML = Number(totalAmount).toLocaleString();
@@ -82,3 +94,20 @@ sliderMonths.addEventListener("input", function () {
 
 // Inicializar la interfaz con los valores iniciales
 updateValues();
+
+// Cuando el usuario hace clic en el botón, abre el modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// Cuando el usuario hace clic en <span> (x), cierra el modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// Cuando el usuario hace clic en cualquier lugar fuera del modal, cierra el modal
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
