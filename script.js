@@ -7,6 +7,7 @@ const total = document.getElementById("total");
 const monthsLabel = document.getElementById("monthsLabel");
 const monthReport = document.getElementById("monthReport");
 const serviceReport = document.getElementById("serviceReport");
+const interestMVLabel = document.getElementById("interestMV");
 
 //docs: https://docs.google.com/spreadsheets/d/17cvJi5X5llrzgnoR5NtKKWacb7Tj5DbQ/edit?gid=1531492329#gid=1531492329
 // https://www.keypago.com/solicitar-cupo-simulador/
@@ -16,6 +17,7 @@ const serviceReport = document.getElementById("serviceReport");
 let initialValue = 40000; // Valor inicial del slider de cantidad
 let initialMonths = 1; // Valor inicial del slider de meses
 const InteresEA = 26.8242; // Interés Efectivo Anual
+const interestMV = "2.0"; // Interés Mensual Vencido
 const InteresMensual = convertEAtoMV(InteresEA); // Interés Mensual Vencido
 
 // Establecer valores iniciales en los sliders
@@ -49,9 +51,12 @@ function updateValues() {
       service / initialMonths
   );
   amount.innerHTML = initialValue;
-  amountReport.innerHTML = Number(initialValue).toLocaleString();
+  amountReport.innerHTML = Number(initialValue).toLocaleString('es-co');
+  monthReport.innerHTML = initialMonths;
+  monthsLabel.innerHTML = initialMonths;
+  interestMVLabel.innerHTML = interestMV + "%";
   total.innerHTML = Number(totalAmount).toLocaleString();
-  serviceReport.innerHTML = service.toLocaleString();
+  // serviceReport.innerHTML = service.toLocaleString('es-co');
 }
 
 // Event listener para el slider principal
