@@ -5,6 +5,8 @@ const amount = document.getElementById("amount");
 const amountReport = document.getElementById("amountReport");
 const ModalAmountReport = document.getElementById("ModalAmountReport");
 const ModalMonthReport = document.getElementById("ModalMonthReport");
+const ModalTotal = document.getElementById("ModalTotal");
+const ModalDateFirstPayment = document.getElementById("ModalDateFirstPayment");
 const total = document.getElementById("total");
 const monthsLabel = document.getElementById("monthsLabel");
 const monthReport = document.getElementById("monthReport");
@@ -67,8 +69,30 @@ function updateValues() {
   ModalMonthReport.innerHTML = initialMonths;
   monthsLabel.innerHTML = initialMonths;
   interestMVLabel.innerHTML = interestMV + "%";
-  total.innerHTML = Number(totalAmount).toLocaleString();
+  total.innerHTML = Number(totalAmount).toLocaleString('es-co');
+  ModalTotal.innerHTML = Number(totalAmount).toLocaleString('es-co');
+  ModalDateFirstPayment.innerHTML = calcularFecha();
   // serviceReport.innerHTML = service.toLocaleString('es-co');
+}
+
+function calcularFecha() {
+  const hoy = new Date();
+  const dia = hoy.getDate();
+  const mes = hoy.getMonth();
+  const año = hoy.getFullYear();
+
+  let fechaResultado;
+  const opciones = { day: '2-digit', month: 'short', year: 'numeric' };
+
+  if (dia >= 1 && dia <= 10) {
+      fechaResultado = new Date(año, mes + 1, 5);
+  } else if (dia >= 10 && dia <= 20) {
+      fechaResultado = new Date(año, mes + 1, 15);
+  } else {
+      fechaResultado = new Date(año, mes + 1, 25);
+  }
+
+  return fechaResultado.toLocaleDateString('es-ES', opciones);
 }
 
 // Event listener para el slider principal
