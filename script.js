@@ -7,6 +7,8 @@ const ModalAmountReport = document.getElementById("ModalAmountReport");
 const ModalMonthReport = document.getElementById("ModalMonthReport");
 const ModalTotal = document.getElementById("ModalTotal");
 const ModalDateFirstPayment = document.getElementById("ModalDateFirstPayment");
+const ModalTotalFees = document.getElementById("ModalTotalFees");
+const ModalFianza = document.getElementById("ModalFianza");
 const total = document.getElementById("total");
 const monthsLabel = document.getElementById("monthsLabel");
 const monthReport = document.getElementById("monthReport");
@@ -72,6 +74,8 @@ function updateValues() {
   total.innerHTML = Number(totalAmount).toLocaleString('es-co');
   ModalTotal.innerHTML = Number(totalAmount).toLocaleString('es-co');
   ModalDateFirstPayment.innerHTML = calcularFecha();
+  ModalFianza.innerHTML = Number(service).toLocaleString('es-co');
+  ModalTotalFees.innerHTML = Number((totalAmount * initialMonths) - initialValue - service).toLocaleString('es-co');
   // serviceReport.innerHTML = service.toLocaleString('es-co');
 }
 
