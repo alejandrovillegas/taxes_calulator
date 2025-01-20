@@ -18,6 +18,7 @@
                 value="50"
                 class="slider"
                 id="myRange"
+                oninput="formatCurrency(this)"
               />
               <!-- <p>Valor compra: $<span id="amount"></span></p> -->
 
@@ -41,7 +42,7 @@
               <!-- <p>Valor de servicio: <span id="serviceReport"></span></p> -->
               <!-- <p>Intereses (26.82% EA): <span id="cuota"></span></p> -->
               <p>Valor cuota: $<span id="total"></span></p>
-              <p>Tasa de Interesés M.V.: <span id="interestMV">%</span></p>
+              <p>Tasa de Interés M.V.: <span id="interestMV">%</span></p>
           </div>
           <button id="openModalBtn">Ver plan de pagos</button>
       </div>
