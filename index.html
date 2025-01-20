@@ -10,7 +10,7 @@
     <div class="simulatorcontainer">
       <div class="sliderContainer">
           <div class="slidecontainer">
-              <h3>¿Cuánto vas a comprar?</h3>
+              <h3>Ingresa el valor de tu compra</h3>
               <input
                 type="text"
                 min="40000"
@@ -19,9 +19,9 @@
                 class="slider"
                 id="myRange"
               />
-              <p>Valor compra: $<span id="amount"></span></p>
+              <!-- <p>Valor compra: $<span id="amount"></span></p> -->
 
-              <h3>¿Elige el plazo que prefieres?</h3>
+              <h3 class="months_tittle">Elige el plazo que prefieres</h3>
               <select id="rangeMonths" class="slider">
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -30,7 +30,7 @@
                 <option value="5">5</option>
                 <option value="6">6</option>
               </select>
-              <p>Meses: <span id="monthsLabel"></span></p>
+              <!-- <p>Meses: <span id="monthsLabel"></span></p> -->
           </div>
       </div>
       <div class="reportContainer">
@@ -57,11 +57,11 @@
           <p>Valor de la compra: $<span id="ModalAmountReport"></span></p>
           <p>Plazo: <span id="ModalMonthReport"></span></p>
           <p>Valor cuota: $<span id="ModalTotal"></span></p>
-          <p>Fecha del primer pago: <span id="ModalDateFirstPayment"></span></p>
           <!-- <p>Valor de servicio: <span id="serviceReport"></span></p> -->
           <!-- <p>Intereses (26.82% EA): <span id="cuota"></span></p> -->
           <p>Total Intereses: $<span id="ModalTotalFees"></span></p>
           <p>Total Fianza: $<span id="ModalFianza"></span></p>
+          <p>Fecha del primer pago: <span id="ModalDateFirstPayment"></span></p>
       </div>
     </div>
     </div>

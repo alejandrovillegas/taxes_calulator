@@ -1,7 +1,7 @@
 // Obtener elementos del DOM
 const sliderValues = document.getElementById("myRange");
 const sliderMonths = document.getElementById("rangeMonths");
-const amount = document.getElementById("amount");
+// const amount = document.getElementById("amount");
 const amountReport = document.getElementById("amountReport");
 const ModalAmountReport = document.getElementById("ModalAmountReport");
 const ModalMonthReport = document.getElementById("ModalMonthReport");
@@ -10,7 +10,7 @@ const ModalDateFirstPayment = document.getElementById("ModalDateFirstPayment");
 const ModalTotalFees = document.getElementById("ModalTotalFees");
 const ModalFianza = document.getElementById("ModalFianza");
 const total = document.getElementById("total");
-const monthsLabel = document.getElementById("monthsLabel");
+// const monthsLabel = document.getElementById("monthsLabel");
 const monthReport = document.getElementById("monthReport");
 const serviceReport = document.getElementById("serviceReport");
 const interestMVLabel = document.getElementById("interestMV");
@@ -64,12 +64,13 @@ function updateValues() {
     calcularPMT(InteresMensual, initialMonths, initialValue) +
       service / initialMonths
   );
-  amount.innerHTML = initialValue;
+
+  // amount.innerHTML = initialValue;
   amountReport.innerHTML = Number(initialValue).toLocaleString('es-co');
   ModalAmountReport.innerHTML = Number(initialValue).toLocaleString('es-co');
   monthReport.innerHTML = initialMonths;
   ModalMonthReport.innerHTML = initialMonths;
-  monthsLabel.innerHTML = initialMonths;
+  // monthsLabel.innerHTML = initialMonths;
   interestMVLabel.innerHTML = interestMV + "%";
   total.innerHTML = Number(totalAmount).toLocaleString('es-co');
   ModalTotal.innerHTML = Number(totalAmount).toLocaleString('es-co');
