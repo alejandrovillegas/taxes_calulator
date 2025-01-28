@@ -14,6 +14,8 @@ const total = document.getElementById("total");
 const monthReport = document.getElementById("monthReport");
 const serviceReport = document.getElementById("serviceReport");
 const interestMVLabel = document.getElementById("interestMV");
+const wrongValues = document.getElementById("wrong_values");
+const reportValues = document.getElementById("report_values");
 
 // Obtener el modal
 const modal = document.getElementById("myModal");
@@ -98,7 +100,6 @@ function calcularFecha() {
   } else {
     fechaResultado = new Date(año, mes + 1, 25);
   }
-
   return fechaResultado.toLocaleDateString("es-ES", opciones);
 }
 
@@ -112,20 +113,53 @@ function formatCurrency(input) {
   } else {
     input.value = "";
   }
+  updateMonthsOptions();
+
+  // Validar el valor mínimo y máximo
+  if (rawValue >= 40000 && rawValue <= 700000) {
+    wrongValues.style.display = "none";
+    reportValues.style.display = "block";
+    openModalBtn.disabled = false;
+  } else {
+    wrongValues.style.display = "block";
+    reportValues.style.display = "none";
+    openModalBtn.disabled = true;
+    return;
+  }
 }
 
 // Event listener para el slider principal
 sliderValues.addEventListener("input", function () {
   initialValue = this.value;
+  console.log('initialValue', initialValue);
   updateValues();
-  if (this.value < 40000) {
-    sliderMonths.max = 3;
-  } else if (this.value > 250001) {
-    sliderMonths.max = 6;
-  } else {
-    sliderMonths.max = 4;
-  }
+  updateMonthsOptions();
 });
+
+// Función para actualizar las opciones del select
+function updateMonthsOptions() {
+  let maxMonths;
+  if (rawValue >= 40000 && rawValue <= 100000) {
+      maxMonths = 3;
+  } else if (rawValue >= 100001 && rawValue <= 250000) {
+      maxMonths = 4;
+  } else if (rawValue >= 250001 && rawValue <= 700000) {
+      maxMonths = 6;
+  } else {
+      maxMonths = 0;
+  }
+
+  // Limpiar las opciones actuales
+  sliderMonths.innerHTML = '';
+
+  // Agregar nuevas opciones
+  for (let i = 1; i <= maxMonths; i++) {
+      const option = document.createElement('option');
+      option.value = i;
+      option.text = i;
+      sliderMonths.appendChild(option);
+  }
+}
 
 // Event listener para el slider de meses
 sliderMonths.addEventListener("input", function () {
